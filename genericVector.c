@@ -11,7 +11,7 @@ void gvec_init(g_vector *vec)
 	vec->capacity = 2;
 	vec->ptr = malloc(vec->capacity * sizeof(void*));
 	if (vec->ptr == NULL)
-		printf("Error: Couldn't allocate Vector\n");
+		perror("Error: Couldn't allocate Vector\n");
 }
 
 //returns the size of vector
