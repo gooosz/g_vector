@@ -7,8 +7,8 @@
 
 void testInitVector()
 {
-    g_vector *v = NULL;
-    v = malloc(sizeof(g_vector));
+    struct g_vector *v = NULL;
+    v = malloc(sizeof(struct g_vector);
     printf("%p\n", v);
 
     gvec_init(v);
@@ -20,8 +20,8 @@ void testInitVector()
 //should print 0 because empty vector
 void testGetSizeVector()
 {
-    g_vector *v = NULL;
-    v = malloc(sizeof(g_vector));
+    struct g_vector *v = NULL;
+    v = malloc(sizeof(struct g_vector));
     gvec_init(v);
 
     size_t size = gvec_getSize(v);
@@ -33,8 +33,8 @@ void testGetSizeVector()
 //should print 2
 void testGetCapacityVector()
 {
-    g_vector *v = NULL;
-    v = malloc(sizeof(g_vector));
+    struct g_vector *v = NULL;
+    v = malloc(sizeof(struct g_vector));
     gvec_init(v);
 
     size_t size = gvec_getCapacity(v);
@@ -50,8 +50,8 @@ void testGetCapacityVector()
 */
 void testResizeVector()
 {
-    g_vector *v = NULL;
-    v = malloc(sizeof(g_vector));
+    struct g_vector *v = NULL;
+    v = malloc(sizeof(struct g_vector));
     gvec_init(v);
 
     gvec_resize(v, 10);
@@ -71,8 +71,8 @@ void testResizeVector()
 */
 void testAppendVector()
 {
-    g_vector *v = NULL;
-    v = malloc(sizeof(g_vector));
+    struct g_vector *v = NULL;
+    v = malloc(sizeof(struct g_vector));
     gvec_init(v);
 
     void *item1 = NULL;
@@ -93,8 +93,8 @@ void testAppendVector()
 */
 void testGetVector()
 {
-    g_vector *v = NULL;
-    v = malloc(sizeof(g_vector));
+    struct g_vector *v = NULL;
+    v = malloc(sizeof(struct g_vector));
     gvec_init(v);
 
     int *item1 = NULL;
@@ -122,8 +122,8 @@ void testGetVector()
 */
 void testDeleteVector()
 {
-    g_vector *v = NULL;
-    v = malloc(sizeof(g_vector));
+    struct g_vector *v = NULL;
+    v = malloc(sizeof(struct g_vector));
     gvec_init(v);
 
     int *item1 = malloc(sizeof(int));
@@ -167,8 +167,8 @@ void testDeleteVector()
 */
 void testEmptyVector()
 {
-    g_vector *v = NULL;
-    v = malloc(sizeof(g_vector));
+    struct g_vector *v = NULL;
+    v = malloc(sizeof(struct g_vector));
     gvec_init(v);
 
     printf("%d\n", gvec_empty(v));
@@ -193,8 +193,8 @@ void testEmptyVector()
 
 void testSwapVector()
 {
-    g_vector *v = NULL;
-    v = malloc(sizeof(g_vector));
+    struct g_vector *v = NULL;
+    v = malloc(sizeof(struct g_vector));
     gvec_init(v);
 
     int *item1 = malloc(sizeof(int));
