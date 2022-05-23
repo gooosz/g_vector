@@ -14,6 +14,7 @@ void testInitVector()
     printf("%p\n", v);
 
     gvec_free(&v);
+    printf("%p\n", v);
 }
 
 //should print 0 because empty vector
@@ -225,6 +226,6 @@ void printManual()
 
 int main()
 {
-    testAppendVector();
+    testInitVector();
     return 0;
 }

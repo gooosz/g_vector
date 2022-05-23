@@ -127,7 +127,7 @@ void gvec_free(g_vector **vec)
 	free((*vec)->ptr);
 	free(*vec);
 	(*vec)->ptr = NULL;
-	vec = NULL;
+	*vec = NULL;
 }
 
 
