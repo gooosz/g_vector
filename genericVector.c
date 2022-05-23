@@ -5,12 +5,13 @@
  * to capacity: 2
  *
 */
-void gvec_init(g_vector *vec)
+void gvec_init(g_vector **vec)
 {
-	vec->size = 0;
-	vec->capacity = 2;
-	vec->ptr = malloc(vec->capacity * sizeof(void*));
-	if (vec->ptr == NULL)
+	*vec = malloc(sizeof(g_vector));
+	(*vec)->size = 0;
+	(*vec)->capacity = 2;
+	(*vec)->ptr = malloc((*vec)->capacity * sizeof(void*));
+	if ((*vec)->ptr == NULL)
 		perror("Error: Couldn't allocate Vector\n");
 }
 

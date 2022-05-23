@@ -8,10 +8,9 @@
 void testInitVector()
 {
     g_vector *v = NULL;
-    v = malloc(sizeof(g_vector));
     printf("%p\n", v);
 
-    gvec_init(v);
+    gvec_init(&v);
     printf("%p\n", v->ptr);
 
     gvec_free(v);
@@ -21,8 +20,7 @@ void testInitVector()
 void testGetSizeVector()
 {
     g_vector *v = NULL;
-    v = malloc(sizeof(g_vector));
-    gvec_init(v);
+    gvec_init(&v);
 
     size_t size = gvec_getSize(v);
     printf("%zu\n", size);
@@ -34,8 +32,7 @@ void testGetSizeVector()
 void testGetCapacityVector()
 {
     g_vector *v = NULL;
-    v = malloc(sizeof(g_vector));
-    gvec_init(v);
+    gvec_init(&v);
 
     size_t size = gvec_getCapacity(v);
     printf("%zu\n", size);
@@ -51,8 +48,7 @@ void testGetCapacityVector()
 void testResizeVector()
 {
     g_vector *v = NULL;
-    v = malloc(sizeof(g_vector));
-    gvec_init(v);
+    gvec_init(&v);
 
     gvec_resize(v, 10);
     size_t size1 = gvec_getCapacity(v);
@@ -72,8 +68,7 @@ void testResizeVector()
 void testAppendVector()
 {
     g_vector *v = NULL;
-    v = malloc(sizeof(g_vector));
-    gvec_init(v);
+    gvec_init(&v);
 
     void *item1 = NULL;
     void *item2 = NULL;
@@ -94,8 +89,7 @@ void testAppendVector()
 void testGetVector()
 {
     g_vector *v = NULL;
-    v = malloc(sizeof(g_vector));
-    gvec_init(v);
+    gvec_init(&v);
 
     int *item1 = NULL;
     item1 = malloc(sizeof(int));
@@ -124,7 +118,7 @@ void testDeleteVector()
 {
     g_vector *v = NULL;
     v = malloc(sizeof(g_vector));
-    gvec_init(v);
+    gvec_init(&v);
 
     int *item1 = malloc(sizeof(int));
     *item1 = 1;
@@ -169,7 +163,7 @@ void testEmptyVector()
 {
     g_vector *v = NULL;
     v = malloc(sizeof(g_vector));
-    gvec_init(v);
+    gvec_init(&v);
 
     printf("%d\n", gvec_empty(v));
 
@@ -195,7 +189,7 @@ void testSwapVector()
 {
     g_vector *v = NULL;
     v = malloc(sizeof(g_vector));
-    gvec_init(v);
+    gvec_init(&v);
 
     int *item1 = malloc(sizeof(int));
     *item1 = 100;
@@ -231,6 +225,6 @@ void printManual()
 
 int main()
 {
-    printManual();
+    testInitVector();
     return 0;
 }

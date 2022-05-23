@@ -16,7 +16,7 @@ typedef struct g_vector {
 	void **ptr;
 } g_vector;
 
-void gvec_init(g_vector *vec);					//Initialises the Vector
+void gvec_init(g_vector **vec);					//Initialises the Vector
 size_t gvec_getSize(const g_vector *vec);				//returns the size of vector
 size_t gvec_getCapacity(const g_vector *vec);				//returns size of allocated storage
 void gvec_append(g_vector *vec, void *val);			//Appends val to Vector
