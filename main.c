@@ -115,7 +115,8 @@ void testGetVector()
  * -delete last item:
  * ----Address of deleted item: NULL
  * -delete midst item:
- * ----Address of item with index + 1 (because move up)
+ * ----Address of item3 == Address of item2
+ * ----because item3 changed it's position to former item2 one's
  *
 */
 void testDeleteVector()
@@ -226,6 +227,6 @@ void printManual()
 
 int main()
 {
-    testInitVector();
+    printManual();
     return 0;
 }
