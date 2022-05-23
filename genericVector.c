@@ -1,5 +1,12 @@
 #include "genericVector.h"
 
+struct g_vector {
+	size_t size;
+	size_t capacity;
+	void **ptr;
+};
+
+
 /* Initialises the Vector
  * to size: 0
  * to capacity: 2
@@ -117,6 +124,8 @@ void gvec_free(g_vector **vec)
 {
 	free((*vec)->ptr);
 	free(*vec);
+	(*vec)->ptr = NULL;
+	vec = NULL;
 }
 
 

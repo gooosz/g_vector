@@ -10,11 +10,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-typedef struct g_vector {
-	size_t size;
-	size_t capacity;
-	void **ptr;
-} g_vector;
+typedef struct g_vector g_vector;
 
 void gvec_init(g_vector **vec);					//Initialises the Vector
 size_t gvec_getSize(const g_vector *vec);				//returns the size of vector
