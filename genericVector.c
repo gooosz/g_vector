@@ -72,26 +72,24 @@ void gvec_delete(g_vector *vec, size_t position)
 {
 	/*
 	 * 2 Cases:
-	 * -Case 1: Delete Value from the end of Vector, easy
-	 * -Case 2: Delete Value in midst of Vector
+	 * -Case 1: Delete Value in midst of Vector
+	 * -Case 2: Delete Value from the end of Vector, easy
 	*/
 
 	if (vec->size == 0)
 		return;
 
 	//Case 1:
-	if (position == vec->size-1)
-		vec->ptr[position] = NULL;
-
-	//Case 2:
 	if (position < vec->size-1) {
 		for (size_t i=position; i<vec->size-1; i++) {
 			vec->ptr[i] = vec->ptr[i+1];
 		}
-		vec->ptr[vec->size-1] = NULL;
 	}
-
-	vec->size--;
+	//Case 2:
+	if (position <= vec->size-1) {
+		vec->ptr[vec->size-1] = NULL;
+		vec->size--;
+	}
 }
 
 //checks if vector is empty
