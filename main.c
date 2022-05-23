@@ -62,8 +62,8 @@ void testResizeVector()
 }
 
 /*
- * should print size of 2
- * due to 2 appended items
+ * should print size of 3
+ * due to 3 appended items
 */
 void testAppendVector()
 {
@@ -72,12 +72,15 @@ void testAppendVector()
 
     void *item1 = NULL;
     void *item2 = NULL;
+    void *item3 = NULL;
 
     gvec_append(v, item1);
     gvec_append(v, item2);
+    gvec_append(v, item3);
+
 
     size_t size = gvec_getSize(v);
-    printf("%zu\n", size);
+    printf("Size: %zu\n", size);
 
     gvec_free(&v);
 }
@@ -117,7 +120,6 @@ void testGetVector()
 void testDeleteVector()
 {
     g_vector *v = NULL;
-    v = malloc(sizeof(g_vector));
     gvec_init(&v);
 
     int *item1 = malloc(sizeof(int));
@@ -162,7 +164,6 @@ void testDeleteVector()
 void testEmptyVector()
 {
     g_vector *v = NULL;
-    v = malloc(sizeof(g_vector));
     gvec_init(&v);
 
     printf("%d\n", gvec_empty(v));
@@ -188,7 +189,6 @@ void testEmptyVector()
 void testSwapVector()
 {
     g_vector *v = NULL;
-    v = malloc(sizeof(g_vector));
     gvec_init(&v);
 
     int *item1 = malloc(sizeof(int));
@@ -225,6 +225,6 @@ void printManual()
 
 int main()
 {
-    testInitVector();
+    testAppendVector();
     return 0;
 }

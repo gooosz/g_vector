@@ -41,7 +41,7 @@ size_t gvec_getCapacity(const g_vector *vec)
 void gvec_append(g_vector *vec, void *val)
 {
 	if (vec->size == vec->capacity)
-		gvec_resize(vec, vec->capacity * 2);
+		gvec_resize(vec, vec->capacity * 1.618);
 	vec->ptr[vec->size] = val;
 	vec->size++;
 }
@@ -74,7 +74,6 @@ void gvec_resize(g_vector *vec, size_t newSize)
 	vec->capacity = newSize;
 	if (newSize < vec->size)
 		vec->size = newSize;
-	free(temp);
 }
 
 //removes the Value at position from Vector
