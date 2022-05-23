@@ -59,12 +59,14 @@ void* gvec_get(g_vector *vec, size_t position)
 */
 void gvec_resize(g_vector *vec, size_t newSize)
 {
-	vec->ptr = realloc(vec->ptr, newSize);
-	if (vec->ptr == NULL)
+	void **temp = realloc(vec->ptr, newSize);
+	if (temp == NULL)
 		perror("Error: Couldn't resize Vector");
+	vec->ptr = temp;
 	vec->capacity = newSize;
 	if (newSize < vec->size)
 		vec->size = newSize;
+	free(temp);
 }
 
 //removes the Value at position from Vector
