@@ -15,13 +15,13 @@ void gvec_init(g_vector *vec)
 }
 
 //returns the size of vector
-size_t gvec_getSize(g_vector *vec)
+size_t gvec_getSize(const g_vector *vec)
 {
 	return vec->size;
 }
 
 //returns size of allocated storage
-size_t gvec_getCapacity(g_vector *vec)
+size_t gvec_getCapacity(const g_vector *vec)
 {
 	return vec->capacity;
 }
@@ -42,7 +42,7 @@ void gvec_append(g_vector *vec, void *val)
  * returns the Value at position
  * if position > vec->size: print error to console
 */
-void* gvec_get(g_vector *vec, size_t position)
+void* gvec_get(const g_vector *vec, size_t position)
 {
 	if (position >= vec->size) {
 		perror("Error: Index out of bounds\n");
@@ -95,7 +95,7 @@ void gvec_delete(g_vector *vec, size_t position)
 }
 
 //checks if vector is empty
-bool gvec_empty(g_vector *vec)
+bool gvec_empty(const g_vector *vec)
 {
 	return (vec->size == 0);
 }
