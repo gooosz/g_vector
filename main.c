@@ -11,9 +11,9 @@ void testInitVector()
     printf("%p\n", v);
 
     gvec_init(&v);
-    printf("%p\n", v->ptr);
+    printf("%p\n", v);
 
-    gvec_free(v);
+    gvec_free(&v);
 }
 
 //should print 0 because empty vector
@@ -25,7 +25,7 @@ void testGetSizeVector()
     size_t size = gvec_getSize(v);
     printf("%zu\n", size);
 
-    gvec_free(v);
+    gvec_free(&v);
 }
 
 //should print 2
@@ -37,7 +37,7 @@ void testGetCapacityVector()
     size_t size = gvec_getCapacity(v);
     printf("%zu\n", size);
 
-    gvec_free(v);
+    gvec_free(&v);
 }
 
 /*
@@ -58,7 +58,7 @@ void testResizeVector()
     size_t size2 = gvec_getCapacity(v);
     printf("%zu\n", size2);
 
-    gvec_free(v);
+    gvec_free(&v);
 }
 
 /*
@@ -79,7 +79,7 @@ void testAppendVector()
     size_t size = gvec_getSize(v);
     printf("%zu\n", size);
 
-    gvec_free(v);
+    gvec_free(&v);
 }
 
 /*
@@ -103,7 +103,7 @@ void testGetVector()
     printf("Value of item: %d\n", *ptrToItem);
 
     free(item1);
-    gvec_free(v);
+    gvec_free(&v);
 }
 
 /*
@@ -151,7 +151,7 @@ void testDeleteVector()
     printf("Pointer item3: %p\n", ptrToItem3);
     printf("Pointer item2: %p\n", ptrToItem2);
 
-    gvec_free(v);
+    gvec_free(&v);
 }
 
 /*
@@ -176,7 +176,7 @@ void testEmptyVector()
     printf("%d\n", gvec_empty(v));
 
     free(item1);
-    gvec_free(v);
+    gvec_free(&v);
 }
 
 /*
@@ -211,7 +211,7 @@ void testSwapVector()
 
     free(item1);
     free(item2);
-    gvec_free(v);
+    gvec_free(&v);
 }
 
 void printManual()

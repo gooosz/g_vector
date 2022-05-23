@@ -113,10 +113,10 @@ void gvec_swap(g_vector *vec, size_t pos1, size_t pos2)
 }
 
 //Free the memory
-void gvec_free(g_vector* vec)
+void gvec_free(g_vector **vec)
 {
-	free(vec->ptr);
-	free(vec);
+	free((*vec)->ptr);
+	free(*vec);
 }
 
 

@@ -25,6 +25,6 @@ void gvec_resize(g_vector *vec, size_t newSize);		//resizes the size of Vector t
 void gvec_delete(g_vector *vec, size_t position);		//removes the int at position from Vector
 bool gvec_empty(const g_vector *vec);					//checks if vector is empty
 void gvec_swap(g_vector *vec, size_t pos1, size_t pos2);	//Swaps the content of pos1 and pos2
-void gvec_free(g_vector* vec);					//Free the memory
+void gvec_free(g_vector **vec);					//Free the memory
 
 
