@@ -5,7 +5,7 @@
 
 g_vector is a generic Vector implementation. <br />
 It focuses mainly on simplicity.
-
+Note that it isn't thread-safe.
 
 ## Compilation
 

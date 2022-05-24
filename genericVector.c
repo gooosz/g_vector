@@ -89,13 +89,11 @@ void* gvec_delete(struct g_vector *vec, size_t position)
 	if (vec->size == 0)
 		return NULL;
 
-	//Case 1:
 	if (position < vec->size-1) {
 		for (size_t i=position; i<vec->size-1; i++) {
 			vec->ptr[i] = vec->ptr[i+1];
 		}
 	}
-	//Case 2:
 	if (position <= vec->size-1) {
 		vec->ptr[vec->size-1] = NULL;
 		vec->size--;
