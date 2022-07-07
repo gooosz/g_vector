@@ -25,3 +25,6 @@ genericVector.h and genericVector.c into your directory and <br />
 > \#include "genericVector.h"
 
 in your project
+
+============
+See the development branch for updates
