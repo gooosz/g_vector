@@ -26,5 +26,5 @@ genericVector.h and genericVector.c into your directory and <br />
 
 in your project
 
-============
+============ <br />
 See the development branch for updates
